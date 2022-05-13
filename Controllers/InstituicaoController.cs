@@ -44,7 +44,7 @@ namespace Cap01.Controllers
             return RedirectToAction("Index");
         }
 
-        /*edit abaixo*
+        /*edit abaixo*/
         public IActionResult Edit(long id)
         {
             return View(instituicoes.Where(i => i.InstituicaoID == id).First());
@@ -56,9 +56,9 @@ namespace Cap01.Controllers
             instituicoes.Remove(instituicoes.Where(i => i.InstituicaoID == instituicao.InstituicaoID).First());
             instituicoes.Add(instituicao);
             return RedirectToAction("Index");
-        }*/
+        }
 
-        /*Detalhes Abaixo
+        /*Detalhes Abaixo*/
         public ActionResult Details(long id)
         {
             return View(instituicoes.Where(i => i.InstituicaoID == id).First());
