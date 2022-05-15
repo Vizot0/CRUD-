@@ -1,18 +1,13 @@
 ﻿@model IEnumerable<Cap01.Models.Instituicao>
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Index";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
+<h1>Index</h1>
+
 <p>
-    <a asp-action="Create">Criar nova instituição</a>
+    <a asp-action="Create" class="btn btn-outline-success">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -42,14 +37,11 @@
                 @Html.DisplayFor(modelItem => item.Endereco)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.InstituicaoID">Edit</a> | |
-                <a asp-action="Details" asp-route-id="@item.InstituicaoID">Details</a> | |
-                <a asp-action="Delete" asp-route-id="@item.InstituicaoID">Delete</a>
-
+                <a asp-action="Edit" asp-route-id="@item.InstituicaoID" class="btn btn-outline-info">Editar</a> | |
+                <a asp-action="Details" asp-route-id="@item.InstituicaoID" class="btn btn-outline-secondary">Detalhes</a> | |
+                <a asp-action="Delete" asp-route-id="@item.InstituicaoID" class="btn btn-outline-danger">Deletar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-</body>
-</html>
