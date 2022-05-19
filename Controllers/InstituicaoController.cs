@@ -14,16 +14,16 @@ namespace Cap01.Controllers
 
             },
             new Instituicao(){InstituicaoID = 2,
-                Nome = "Itis",
-                Endereco = "Taquaritinga",
+                Nome = "Fatec",
+                Endereco = "Matão",
             },
             new Instituicao(){InstituicaoID = 3,
-                Nome = "Santa Ursula",
-                Endereco = "Araraquara",
+                Nome = "Fatec",
+                Endereco = "São Paulo",
             },
             new Instituicao(){InstituicaoID = 4,
-                Nome =  "Santa Monica",
-                Endereco = "São Carlos",
+                Nome =  "Fatec",
+                Endereco = "Ribeirão Preto",
             }
         };
         public IActionResult Index()
