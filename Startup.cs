@@ -27,7 +27,12 @@ namespace Cap01
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<IESContext>(a => a.UseSqlServer("Server=c3po;Database=FilmesFavoritos;Trusted_Connection=True;"));
+            services.AddDbContext<IESContext>(a => a.UseSqlServer("Server=localhost;Database=FilmesFavoritos;Trusted_Connection=True;"));
+
+            services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", option => {
+                option.LoginPath = "/Login/Entrar";
+                option.AccessDeniedPath = "/Login/Ops";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +53,8 @@ namespace Cap01
 
             app.UseRouting();
 
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
